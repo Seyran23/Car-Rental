@@ -222,7 +222,7 @@ function BookCar() {
                     <option>Liverpool</option>
                     <option>Manchester</option>
                     <option>Glasgow</option>
-                    <option>Leicester</option
+                    <option>Leicester</option>
                   </select>
                 </div>
 
