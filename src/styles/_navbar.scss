@@ -1,0 +1,170 @@
+@use "./global/boilerplate" as *;
+@use "./global/typography" as *;
+@use "./global/colors" as *;
+
+.not-available {
+  display: none;
+}
+
+nav {
+  display: flex;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  margin: 0 auto;
+  padding: 2.7rem 2rem;
+
+  max-width: 133rem;
+  width: 100%;
+  z-index: 999;
+
+  font-size: $p-size;
+  font-weight: 500;
+  font-family: Rubik, sans-serif;
+
+  cursor: pointer;
+
+  &-img {
+    width: 14.5rem;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.1rem;
+    list-style: none;
+
+    a {
+      color: $text-black;
+      transition: all 0.3s;
+
+      &:hover {
+        color: $text-orange;
+      }
+    }
+  }
+
+  &-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2.5rem;
+
+    font-size: $p-size;
+    font-weight: 500;
+
+    &__sign-in {
+      color: $text-black;
+      &:hover {
+        color: $text-orange;
+        transition: all 0.3s;
+      }
+    }
+
+    &__registration {
+      color: white;
+      background-color: $text-orange;
+      padding: 1.5rem 3rem;
+      border-radius: 3px;
+      box-shadow: 0 10px 15px 0 rgba(255, 83, 48, 0.35);
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: #fa4226;
+        box-shadow: 0 10px 15px 0 rgba(255, 83, 48, 0.5);
+      }
+    }
+  }
+}
+
+.mobile-hamb {
+  font-size: 2.8rem;
+  display: none;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    color: $text-orange;
+  }
+}
+
+.mobile-navbar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  background-color: $bg-white;
+  z-index: 999999;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
+
+  &__close {
+    font-size: 3rem;
+    position: absolute;
+    top: 3.5rem;
+    right: 3.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $text-orange;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    font-size: 2.3rem;
+    gap: 3rem;
+    text-align: center;
+
+    li {
+      a {
+        text-decoration: none;
+        color: $text-black;
+        font-weight: 500;
+        transition: all 0.3s;
+
+        &:hover {
+          color: $text-orange;
+        }
+      }
+    }
+  }
+}
+
+.open-nav {
+  left: 0;
+}
+
+@media screen and (max-width: 1000px) {
+  .navbar {
+    ul,
+    &-buttons {
+      display: none;
+    }
+  }
+
+  .mobile-hamb {
+    display: inline-block;
+  }
+}
